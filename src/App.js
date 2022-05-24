@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { Header } from "./components/header/Header";
+import {Provider} from 'react-redux'
+import { store } from "./redux/store";
+import {ErrorBoundary} from 'react-error-boundary'
+import { Main } from "./components/main/Main";
+import { StateHandlerContext } from "./context/StateHandlerContext";
+
+function ErrorFallback({error, resetErrorBoundary}) {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+  )
+}
+
 
 function App() {
   return (
+    <ErrorBoundary 
+    FallbackComponent={ErrorFallback}
+    onReset={() => {
+      // reset the state of your app so the error doesn't happen again
+    }}
+    >
+    <StateHandlerContext>
+    <Provider store={store} >
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Main />
     </div>
+    </Provider>
+    </StateHandlerContext>
+    </ErrorBoundary>
   );
 }
 
