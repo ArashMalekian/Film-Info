@@ -10,7 +10,7 @@ export const Films = () => {
     const dispatch = useDispatch()
     const filmData = useSelector(state => state.filmInfosState)
     useEffect(() => {
-        dispatch(fetchFilmsInformation(2))
+        dispatch(fetchFilmsInformation())
       return () => {
       };
     }, [])
@@ -18,13 +18,13 @@ export const Films = () => {
         <>
         {
             context.partShower ? 
-        <div style={{width:"100%"  , flexWrap:"wrap" , display:"flex"  , alignItems:"center" , justifyContent:"center"}} >
+        <div style={{width:"100%"  , flexWrap:"wrap" , display:"flex"  , alignItems:"center" , justifyContent:"center" , marginTop:"150px"}} >
         {
             filmData.loading ?
             <h1>loading ...</h1> :
             filmData.error ?
             <h2>{filmData.error}</h2> :
-            filmData.data.map(item => <FilmItem data={item} key={item.id} />  )
+            filmData.data.map(item =>  <FilmItem  data={item} key={item.id} />   )
         }
         </div> 
         :

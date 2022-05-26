@@ -1,0 +1,20 @@
+@import "../../../Variable.scss";
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+
+}
+.headerbox{
+    position: fixed;
+    background-color: $secondary;
+    color: $base;
+    padding: 2%;
+    border-radius: 0 0 50%   50% ;
+    border: 2px solid $base;
+    border-top: none;
+    box-shadow: 0 0 20px $base;
+}

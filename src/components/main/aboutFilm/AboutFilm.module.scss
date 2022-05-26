@@ -1,0 +1,79 @@
+@import '../../../Variable.scss';
+
+.aboutfilmcontainer{
+    padding: 2%;
+    border: 1px solid $secondary;
+    border-radius: 15px;
+    margin: 5% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $text;
+    margin-top: 100px;
+    .poster{
+        border-radius: 50%;
+        width: 500px;
+        height: 500px;
+        overflow: hidden;
+        border: 3px solid $secondary ;
+    }
+    .infobox{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 50%;
+        h5{
+            margin: 0;
+        }
+    }
+    .infoitem{
+        border-radius: 10px;
+        background: white;
+        padding: 2%;
+    }
+    .casts{
+        text-align: left;
+        width: 100%;
+        li{
+            display: flex;
+            align-items: center;
+        }
+        #plot{
+            align-items: flex-end !important;
+            width: 100%;
+        }
+    }
+    .awardandscore{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        ul{
+            display: flex;
+            width: 60%;
+            align-items: center;
+            justify-content: space-between;
+            margin: 2% 0;
+            li{
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+                background-color: white;
+                padding: 2%;
+                width: 30%;
+                justify-content: space-evenly;
+                h5{
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .awarditem{
+        border-radius: 10px;
+        background: white;
+        padding: 2%;
+        width: 60%;
+        font-weight: bold;
+    }
+}

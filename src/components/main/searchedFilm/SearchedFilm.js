@@ -8,13 +8,13 @@ export const SearchedFilm = () => {
     const searchedFilm = useSelector(state => state.searchedFilmState)
     return (
         <div style={{width:"100%"}} >
+        <div onClick={context.filmsShower} >
+            بستن
+        </div>
         <div style={{width:"100%" , display:"flex" , alignItems:"center" , justifyContent:"center" , flexWrap:"wrap"}} >
             {
                 searchedFilm.data.map(item => <SearchedFilmItem key={item.id} data={item} /> ) 
             }
-        </div>
-        <div onClick={context.filmsShower} >
-            بستن
         </div>
         </div>
     )
